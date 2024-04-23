@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @find_table %>
+
+<div>
+  <%= link_to "Edit this find table", edit_find_table_path(@find_table) %> |
+  <%= link_to "Back to find tables", find_tables_path %>
+
+  <%= button_to "Destroy this find table", @find_table, method: :delete %>
+</div>

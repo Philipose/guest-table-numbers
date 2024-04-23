@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+<!--  
+<h1>Find tables</h1>
+
+<div id="find_tables">
+  <% @find_tables.each do |find_table| %>
+    <%= render find_table %>
+    <p>
+      <%= link_to "Show this find table", find_table %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New find table", new_find_table_path %>
+-->
+<%= form_with url: find_tables_path, method: :get, data: { turbo_frame: 'project_listings' } do |form| %>
+  <%= form.search_field :q, class: 'form-control', placeholder: "Search for Name or Description" %>
+<% end %>
+
+<br/>
+<br/>
+<br/>
+
+<%= turbo_frame_tag 'project_listings' do %>
+  <% unless @results.empty? %>
+        <div class="p-2 border">
+          <table>
+          <tr>
+            <th>First Name</td>
+            <th>Last Name</td>
+            <th>Table</td>
+          </th>
+    <% @results&.each do |find_table| %>
+          <tr>
+            <td><%= find_table.first_name %></td>
+            <td><%= find_table.last_name %></td>
+            <td><%= find_table.table_number %></td>
+          </tr>
+
+          <%# <div class="fs-6">First Name: <%= find_table.first_name %/> - Last Name: <%= find_table.last_name %/></div> %>
+      </div>
+    <% end %>
+  <% end %>
+          </table>
+<% end %>

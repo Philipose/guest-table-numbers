@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "external_search_result" do %>
+  <% @external_search_result&.each do |find_table| %>
+    <div class="p-2 border">
+        <div class="fs-6">First Name: <%= find_table.first_name %> - Last Name: <%= find_table.last_name %></div>
+    </div>
+  <% end %>
+<% end %>
