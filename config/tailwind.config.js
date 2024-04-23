@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: [
@@ -12,6 +13,25 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      olive: '#71785c',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.neutral,
+      red: colors.red,
+      blue: colors.blue,
+      yellow: colors.yellow,
+      green: colors.green,
+      indigo: colors.indigo,
+      purple: colors.purple,
+      pink: colors.pink,
+      orange: colors.orange,
+      teal: colors.teal,
+      cyan: colors.cyan,
+      lime: colors.lime,
     },
   },
   plugins: [

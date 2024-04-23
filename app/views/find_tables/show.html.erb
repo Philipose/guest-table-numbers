@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %>
+<div class="max-w-4xl mx-auto py-5">
+  <div class="flex justify-center mb-4">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <%= link_to "Back to Search", find_tables_path %>
+    </button>
+  </div>
 
-<%= render @find_table %>
-
-<div>
-  <%= link_to "Edit this find table", edit_find_table_path(@find_table) %> |
-  <%= link_to "Back to find tables", find_tables_path %>
-
-  <%= button_to "Destroy this find table", @find_table, method: :delete %>
+  <div class="mb-4">
+    <table class="min-w-full table-auto text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">First Name</td>
+          <th scope="col" class="px-6 py-3">Last Name</td>
+          <th scope="col" class="px-6 py-3">Table</td>
+        </th>
+      </thead>
+      <tbody>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <td><%= @find_table.first_name %></td>
+          <td><%= @find_table.last_name %></td>
+          <td><%= @find_table.table_number %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
